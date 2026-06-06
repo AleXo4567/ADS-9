@@ -38,7 +38,8 @@ int main() {
         PMTree curTree(symbols);
 
         std::mt19937 rng(42);
-        std::uniform_int_distribution<int> range(1, static_cast<int>(fact(n)));
+        std::uniform_int_distribution<int> range(
+            1, static_cast<int>(fact(n)));
         int targetPos = range(rng);
 
         auto startTime = std::chrono::high_resolution_clock::now();
@@ -49,9 +50,12 @@ int main() {
         getPerm2(curTree, targetPos);
         auto endTime = std::chrono::high_resolution_clock::now();
 
-        double elapsedAll = std::chrono::duration<double>(afterAll - startTime).count();
-        double elapsedFirst = std::chrono::duration<double>(afterFirst - afterAll).count();
-        double elapsedSecond = std::chrono::duration<double>(endTime - afterFirst).count();
+        double elapsedAll = std::chrono::duration<double>(
+            afterAll - startTime).count();
+        double elapsedFirst = std::chrono::duration<double>(
+            afterFirst - afterAll).count();
+        double elapsedSecond = std::chrono::duration<double>(
+            endTime - afterFirst).count();
 
         std::cout << n << ";"
                   << std::fixed << std::setprecision(6) << elapsedAll << ";"
