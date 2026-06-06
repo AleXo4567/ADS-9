@@ -54,7 +54,8 @@ void PMTree::destroy(Node* ptr) {
 }
 
 static void walk(PMTree::Node* node, std::vector<char>& buffer,
-                 std::vector<std::vector<char>>& result, int depth, int maxDepth) {
+                 std::vector<std::vector<char>>& result, int depth,
+                 int maxDepth) {
     if (depth == maxDepth) {
         result.push_back(buffer);
         return;
